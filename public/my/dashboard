@@ -1,0 +1,24 @@
+{
+    "items": [
+        {
+            "title": "First Item",
+            "content": "Some Info",
+            "image": {
+                "url": "https://knative.dev/docs/images/logo/rgb/knative-logo-rgb.png",
+                "alt": "Knative logo"
+            }
+        },
+        {
+            "title": "Second Item",
+            "content": "More Info",
+            "image": {
+                "url": "https://cdn.oreillystatic.com/images/sitewide-headers/oreilly_logo_mark_red.svg",
+                "alt": "O'Reilly logo"
+            }
+        },
+        {
+            "title": "Another item",
+            "content": "third row!"
+        }
+    ]
+}
