@@ -2,7 +2,7 @@
 
 In order to run these examples, you'll want to install the following software:
 
-### [`https://docs.docker.com/engine/install](Docker):
+### [Docker](https://docs.docker.com/engine/install):
 
   Docker provides a container runtime; a container is a bundle of software
   container all the dependencies needed to run an application.  Containers are
@@ -17,14 +17,14 @@ In order to run these examples, you'll want to install the following software:
   there, we'll be using Docker's built-in tools because they are widely adopted
   and very flexible.
 
-### [https://kind.sigs.k8s.io/](`kind`):
+### [`kind`](https://kind.sigs.k8s.io/):
 
   Kind is a tool for running Kubernetes locally.  Its name stands for
   "Kubernetes in Docker", and it can set up and manage a Kubernetes cluster
   running on a local Docker instance.  This is a handy setup for testing, and
   also for trying things out when you don't need persistent data.
 
-### [https://kubernetes.io/docs/tasks/tools/install-kubectl](`kubectl`):
+### [`kubectl`](https://kubernetes.io/docs/tasks/tools/install-kubectl):
 
   `kubectl` is the official Kubernetes command-line tool.  `kn-quickstart` uses
   `kubectl` to install Knative once the `kind` cluster is created.  You probably
@@ -37,7 +37,7 @@ In order to run these examples, you'll want to install the following software:
   the cluster, and re-apply the resources to a different cluster to move an
   application from development to production.
 
-### [https://knative.dev/docs/getting-started/quickstart-install/](`kn` and `kn quickstart`):
+### [`kn` and `kn quickstart`](https://knative.dev/docs/getting-started/quickstart-install/):
 
   `kn` is the official Knative CLI.  We'll be using the CLI for most of the
   examples because Kubernetes resource definitions can get unwieldy, but it's
@@ -49,14 +49,14 @@ In order to run these examples, you'll want to install the following software:
 
 In order to customize the code, you'll need to install the following packages:
 
-### [https://nodejs.org/](NodeJS):
+### [NodeJS](https://nodejs.org/):
 
   If you want to follow along with the commands for building and testing the
   frontend, you'll need a copy of NodeJS to build and run React.  (We'll use the
   NodeJS command to download and run React and any other dependencies, so you
   don't need to install anything React-specific.)
 
-### [https://www.python.org/downloads/](Python):
+### [Python](https://www.python.org/downloads/):
 
   If you want to run the API service or routing layer later, Python is used to
   implement both of these processes.  If you have Python downloaded, you should
