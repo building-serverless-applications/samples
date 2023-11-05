@@ -11,11 +11,16 @@ interface State {
     items: CardData[]
 }
 
+interface ResponseData {
+    items: CardData[]
+}
+
 class Dashboard extends React.Component<Params, State> {
     state: State = {
         items: []
     }
     timer?: NodeJS.Timeout
+    timeoutMs: number = 2000
 
     componentDidMount(): void {
         if (this.props.source !== undefined) {
@@ -36,15 +41,26 @@ class Dashboard extends React.Component<Params, State> {
             console.log('No URL set')
             return
         }
-        const response = await window.fetch(this.props.url);
-        const { items } = await response.json();
-        if (response.ok) {
-            this.setState(() => ({ items: items }));
-        } else {
-            console.log('Failed to fetch from %s', this.props.url)
+        try {
+            const response = await window.fetch(this.props.url);
+            const { items }: ResponseData = await response.json();
+            if (response.ok) {
+                this.setState(() => ({ items: items }));
+            } else {
+                console.log('Failed to fetch from %s', this.props.url)
+            }
+
+            this.timeoutMs = 2000
+        } catch (error) {
+            console.log("Unable to fetch %s: %s", this.props.url, error)
+            // Exponential backoff when failing to fetch
+            this.timeoutMs *= 2
+            if (this.timeoutMs > 180_000) {
+                this.timeoutMs = 180_000
+            }
         }
 
-        this.timer = setTimeout(() => this.Poll(), 2000)
+        this.timer = setTimeout(() => this.Poll(), this.timeoutMs)
     }
 
     render() {
