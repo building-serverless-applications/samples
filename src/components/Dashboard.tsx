@@ -36,12 +36,16 @@ class Dashboard extends React.Component<Params, State> {
             console.log('No URL set')
             return
         }
-        const response = await window.fetch(this.props.url);
-        const { items } = await response.json();
-        if (response.ok) {
-            this.setState(() => ({ items: items }));
-        } else {
-            console.log('Failed to fetch from %s', this.props.url)
+        try {
+            const response = await window.fetch(this.props.url);
+            const { items } = await response.json();
+            if (response.ok) {
+                this.setState(() => ({ items: items }));
+            } else {
+                console.log('Failed to fetch from %s', this.props.url)
+            }
+        } catch (error) {
+            console.log('Error fetching data from %s:', this.props.url, error);
         }
 
         this.timer = setTimeout(() => this.Poll(), 2000)

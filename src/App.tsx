@@ -8,7 +8,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline enableColorScheme />
-      <Container maxWidth={false}>
+      <Container maxWidth={false} component="main">
         <Dashboard url='/my/dashboard'></Dashboard>
       </Container>
     </ThemeProvider>
