@@ -30,7 +30,7 @@ jobs:
       continue-on-error: true
     
     - name: Run unit tests
-      run: npm test -- --coverage --watchAll=false
+      run: npm run test:ci
       
     - name: Upload coverage reports
       uses: codecov/codecov-action@v3
@@ -62,7 +62,7 @@ jobs:
       run: npm run build
     
     - name: Run Playwright tests
-      run: npx playwright test
+      run: npm run test:e2e:ui
       continue-on-error: true
       
     - name: Upload Playwright Report
