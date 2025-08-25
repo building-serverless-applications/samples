@@ -45,12 +45,6 @@ The project includes GitHub Actions workflow (`.github/workflows/tests.yml`) tha
 - Builds the application to ensure deployability
 - Uploads test reports and coverage
 
-### Workflow Triggers
-
-Tests run automatically on:
-- Push to `main` or `develop` branches
-- Pull requests to `main` or `develop` branches
-
 ## Running Tests Locally
 
 1. Install dependencies: `npm install`
