@@ -8,6 +8,11 @@
 # testing
 /coverage
 
+# playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
 # production
 /build
 
